@@ -1,21 +1,24 @@
 const PostTemplate = (props) => {
     return(
-        <table className='table'>
-            <thead>
-                <td>{post.name}</td>
-            </thead>
-            <tbody>
-                {props.parentEntries.map((post) => {
+        <div className='container'>
+            <div className='table'>
+                {props.parentPosts.map((post) => {
                     return (
-                        <tr>
-                            <td>{post.post}</td>
-                            <td>{post.likeToggle}</td>
-                        </tr>
-
+                        <tbody>
+                            <tr>
+                                <td>{post.userName}</td>
+                            </tr>
+                            <tr>
+                                <td>{post.postBody}</td>
+                            </tr>
+                            <tr>
+                                <td>{post.likeToggle}</td>
+                            </tr>
+                        </tbody>
                     );
                 })}
-            </tbody>
-        </table>
+            </div>
+        </div>
     );
 }
 
