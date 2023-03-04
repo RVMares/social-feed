@@ -1,3 +1,5 @@
+import React from 'react';
+
 const PostTemplate = (props) => {
     return(
         <div className='container'>
