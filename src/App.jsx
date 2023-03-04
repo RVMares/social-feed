@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import CreatePost from './CreatePost/CreatePost';
 import DisplayPosts from './DisplayPosts/DisplayPosts';
-import NavBar from './NavBar/NavBar';
+import Navbar from './Navbar/Navbar';
+import PostTemplate from './PostTemplate/PostTemplate';
 
 function App() {
   const [posts, setPosts] = useState([{userName: 'David Lagrange', postBody: '“Ned, I would love to stand here and talk with you—but I’m not going to.”', likeToggle: 'liked'}])
@@ -15,9 +16,9 @@ function App() {
   return (
     <div class='container-fluid'>
       
-      <NavBar />
-      <CreatePost />
-      <DisplayPosts parentPosts={addNewPost}/>
+      <Navbar />
+      <CreatePost createNewPost={addNewPost}/>
+      <DisplayPosts parentPosts={posts}/>
     </div>
   );
 }

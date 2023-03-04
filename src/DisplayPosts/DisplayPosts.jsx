@@ -1,20 +1,20 @@
 import React from 'react';
-import PostTemplate from '../PostTemplate/PostTemplate';
 
 const DisplayPosts = (props) => {
-    
     return(
         <table className='table'>
             <thead>
                 <tr>
-                    Your SocialFeed!
+                    <th>Your SocialFeed!</th>
                 </tr>
             </thead>
             <tbody>
                 {props.parentPosts.map((post) => {
                     return (
                         <tr>
-                            <PostTemplate parentPosts={post}/>
+                            <td>{post.userName}</td>
+                            <td>{post.postBody}</td>
+                            <td>{post.likeToggle}</td>
                         </tr>
                     );
                 })}
