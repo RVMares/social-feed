@@ -1,0 +1,28 @@
+button {
+    color:rgb(24, 141, 131);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.likeButtonClass-inactive{
+    stop-color: dimgray;
+}
+
+.likeButtonClass-active{
+    background-color:aquamarine;
+}
+
+.dislikeButtonClass-inactive{
+    stop-color: dimgray;
+}
+
+.dislikeButtonClass-active{
+    background-color: red;
+}

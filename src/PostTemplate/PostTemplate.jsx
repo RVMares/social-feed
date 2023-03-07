@@ -1,14 +1,26 @@
 import React, { useState } from 'react';
-
+import './PostTemplateButton.css';
+import LikeButton from './images/like.png';
+import DislikeButton from './images/dislike.png';
 
 const PostTemplate = (props) => {
 
-    const [buttonClass, setButtonClass] = useState("inactive");
-    function handleClick(){
-        if(buttonClass === "inactive"){
-            setButtonClass("active");
+    const [likeButtonClass, setlikeButtonClass] = useState("inactive");
+    const [dislikeButtonClass, setdislikeButtonClass] = useState("inactive");
+    function handleLikeClick(){
+        if(likeButtonClass === "inactive"){
+            setlikeButtonClass("active");
+            setdislikeButtonClass("inactive");
         }else{
-            setButtonClass("inactive");
+            setlikeButtonClass("inactive");
+        }
+    }
+    function handleDislikeClick(){
+        if(dislikeButtonClass === "inactive"){
+            setdislikeButtonClass("active");
+            setlikeButtonClass("inactive");
+        }else{
+            (setdislikeButtonClass("inactive"));
         }
     }
 
@@ -27,8 +39,12 @@ const PostTemplate = (props) => {
                                 </tr>
                                 <tr>
                                     <div class='btn-group' role='group' aria-label="Like toggle">
-                                        <button type='button' className={buttonClass} onClick={handleClick}>{props.likeToggle}</button>
-                                        <button type='button' className={buttonClass} onClick={handleClick}>{props.likeToggle}</button>
+                                        <button type='button' className={likeButtonClass} onClick={handleLikeClick}>
+                                            <img src={LikeButton} className="img-fluid" alt='Blue thumbs up' />
+                                        </button>
+                                        <button type='button' className={dislikeButtonClass} onClick={handleDislikeClick}>
+                                            <img src={DislikeButton} className="img-fluid" alt='Red thumbs down' />
+                                        </button>
                                     </div>
                                 </tr>
                             </tr>
