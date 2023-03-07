@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './PostTemplateButton.css';
-import LikeButton from './images/like.png';
-import DislikeButton from './images/dislike.png';
 
 const PostTemplate = (props) => {
 
@@ -40,10 +38,10 @@ const PostTemplate = (props) => {
                                 <tr>
                                     <div class='btn-group' role='group' aria-label="Like toggle">
                                         <button type='button' className={likeButtonClass} onClick={handleLikeClick}>
-                                            <img src={LikeButton} className="img-fluid" alt='Blue thumbs up' />
+                                            <img src={require('./like.png')} alt='Blue thumbs up' />
                                         </button>
                                         <button type='button' className={dislikeButtonClass} onClick={handleDislikeClick}>
-                                            <img src={DislikeButton} className="img-fluid" alt='Red thumbs down' />
+                                            <img src={require('./dislike.png')} alt='Red thumbs down' />
                                         </button>
                                     </div>
                                 </tr>
