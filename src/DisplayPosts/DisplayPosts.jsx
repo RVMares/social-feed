@@ -1,4 +1,3 @@
-import React from 'react';
 
 const DisplayPosts = (props) => {
     return(
@@ -9,12 +8,10 @@ const DisplayPosts = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.parentPosts.map((post) => {
+                {props.parentPosts.map((post, index) => {
                     return (
-                        <tr>
-                            <td>{post.userName}</td>
-                            <td>{post.postBody}</td>
-                            <td>{post.likeToggle}</td>
+                        <tr key={index}>
+                            <td>{post.parentPosts}</td>
                         </tr>
                     );
                 })}

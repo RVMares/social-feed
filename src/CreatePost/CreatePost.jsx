@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 
 const CreatePost = (props) => {
 
-    const[name, setName] = useState('');
+    const[userName, setName] = useState('');
     const[postBody, setPostBody] = useState('');
 
     function handleSubmit(event) {
         event.preventDefault();
         let newPost = {
-            name: name,
+            userName: userName,
             postBody: postBody
         };
         console.log(newPost);
-        props.addNewPostProperty(newPost);
+        props.createNewPost(newPost);
     }
 
     return (
         <form onSubmit={handleSubmit} className ='form-grid'>
             <div className= 'form-group'>
                 <label>Name
-                <input type= 'text' className = 'form-control'  value={name} onChange={(event) =>
+                <input type= 'text' className = 'form-control'  value={userName} onChange={(event) =>
                  setName(event.target.value)} />
                 </label>
             </div>
