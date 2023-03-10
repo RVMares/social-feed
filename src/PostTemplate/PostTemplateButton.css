@@ -1,28 +1,45 @@
-button {
-    color:rgb(24, 141, 131);
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
+.container-fluid{
+    width: 100%;
+    padding: 0px, 5px, 5px, 5px;
+    margin-bottom: 5px;
+}
+.row{
+    font-weight: 700;
+}
+.row1{
+    width:100%;
+    min-height: 70px;
+    padding: 5px;
+    border-bottom-style: inset;
     display: inline-block;
-    font-size: 16px;
 }
 
-button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+.column{
+    display:inline-block;
 }
 
-.likeButtonClass-inactive{
-    stop-color: dimgray;
+button{
+    background-color:white;
+    border:none;
+    padding: 5px 10px;
+    border-width: .2px;
+    margin: 5px;
+    position:static;
+    margin-right: 5px;
+    border-radius: 12px;
+    float:right;
+    cursor: pointer;
 }
 
-.likeButtonClass-active{
-    background-color:aquamarine;
+button[aria-pressed="false"]{
+    background-color:white;
+    color:rgb(185, 163, 136);
 }
 
-.dislikeButtonClass-inactive{
-    stop-color: dimgray;
+button[aria-pressed="true"]{
+    color:aquamarine;
 }
+.fa-thumbs-down{
+    margin-left: 1em;
 
-.dislikeButtonClass-active{
-    background-color: red;
 }

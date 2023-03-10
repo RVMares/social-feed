@@ -1,8 +1,40 @@
+.navbar{
+  background-color: rgb(1, 104, 195);
+  color:white;
+  position: fixed;
+  width: 100%;
+  top:0;
+  left:0;
+  font-family: Helvetica, sans-serif;
+}
+
+.navbar h3{
+  padding-left: 30px;
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  margin-top:5em;
+  background-color: rgb(181, 214, 234);
+  font-family: Helvetica, sans-serif;
+}
+
+
 .border-box {
     border: 1px;
     border-style: solid;
-    border-color: black;
-    margin: 1em;
+    border-color: dimgray;
+    margin:auto;
+    margin-bottom: 1em;
     padding: 1em;
-    
-  }
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px rgb(24, 64, 77);
+    color: rgb(55, 52, 52);
+    width: 65%;
+    background-color: white;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+

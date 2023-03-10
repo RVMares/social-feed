@@ -1,55 +1,62 @@
 import React, { useState } from 'react';
 import './PostTemplateButton.css';
 
+
 const PostTemplate = (props) => {
 
-    const [likeButtonClass, setlikeButtonClass] = useState("inactive");
-    const [dislikeButtonClass, setdislikeButtonClass] = useState("inactive");
-    function handleLikeClick(){
-        if(likeButtonClass === "inactive"){
-            setlikeButtonClass("active");
-            setdislikeButtonClass("inactive");
+    const [likeButtonClass, setLikeButtonClass] = useState(false);
+    const [dislikeButtonClass, setDislikeButtonClass] = useState(false);
+
+    const handleLikeClick = () => {
+        if(likeButtonClass === false){
+            setLikeButtonClass(true);
+            setDislikeButtonClass(false);
         }else{
-            setlikeButtonClass("inactive");
+            setLikeButtonClass(false);
         }
-    }
-    function handleDislikeClick(){
-        if(dislikeButtonClass === "inactive"){
-            setdislikeButtonClass("active");
-            setlikeButtonClass("inactive");
+    };
+    const handleDislikeClick = () => {
+        if(dislikeButtonClass === false){
+            setDislikeButtonClass(true);
+            setLikeButtonClass(false);
         }else{
-            (setdislikeButtonClass("inactive"));
+            (setDislikeButtonClass(false));
         }
-    }
+    };
 
     return(
-        <div className='container'>
-            <div className='table'>
-                {props.parentPosts.map((post, index) => {
-                    return (
-                        <tbody>
-                            <tr key={index}>
-                                <tr>
-                                    <td>{post.userName}</td>
-                                </tr>
-                                <tr>
-                                    <td>{post.postBody}</td>
-                                </tr>
-                                <tr>
-                                    <div class='btn-group' role='group' aria-label="Like toggle">
-                                        <button type='button' className={likeButtonClass} onClick={handleLikeClick}>
-                                            <img src={require('./like.png')} alt='Blue thumbs up' />
-                                        </button>
-                                        <button type='button' className={dislikeButtonClass} onClick={handleDislikeClick}>
-                                            <img src={require('./dislike.png')} alt='Red thumbs down' />
-                                        </button>
-                                    </div>
-                                </tr>
-                            </tr>
-                        </tbody>
-                    );
-                })}
-            </div>
+        <div className='container-fluid'>
+            {props.parentPosts.map((post, index) => {
+                return(
+                    <div key={index}>
+                        <div style={{'color':'white'}}>{index+1}</div>
+                        <div className='row'>
+                            {post.userName}
+                        </div>
+                        <div className='row1'>
+                            <div className='col'>
+                                {post.postBody}
+                            </div>
+                            <div className='btn-group' role='group' aria-label="Like buttons">
+                                <button 
+                                    type='likeButton'  
+                                    className={likeButtonClass} 
+                                    onClick={() => handleLikeClick} 
+                                    disabled={likeButtonClass}>
+                                    <i className="fas fa-thumbs-up">LIKE</i>
+                                </button>
+                                <button 
+                                    type='dislikeButton' 
+                                    className={dislikeButtonClass} 
+                                    onClick={() => handleDislikeClick}
+                                    disabled={dislikeButtonClass}>
+                                    <i className="fas fa-thumbs-down">DISLIKE</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
     );
 }
