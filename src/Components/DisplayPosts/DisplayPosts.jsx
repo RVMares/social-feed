@@ -1,3 +1,4 @@
+import Post from '../Components/Post/Post';
 
 const DisplayPosts = (props) => {
 
