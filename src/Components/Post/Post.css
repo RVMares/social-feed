@@ -31,14 +31,14 @@ button{
     cursor: pointer;
 }
 
-button[aria-pressed="false"]{
-    background-color:white;
-    color:rgb(185, 163, 136);
+.likeButtonClass.false{
+    color:springgreen;
 }
 
-button[aria-pressed="true"]{
-    color:aquamarine;
+.dislikeButtonClass.false{
+    color:tomato;
 }
+
 .fa-thumbs-down{
     margin-left: 1em;
 

@@ -1,4 +1,4 @@
-import Post from '../Components/Post/Post';
+import Post from "../Post/Post";
 
 const DisplayPosts = (props) => {
 
@@ -8,11 +8,9 @@ const DisplayPosts = (props) => {
                 Your SocialFeed!
             </div>
             <div className="row no-gutters">
-                {props.parentPosts.map((post, index) => {
+                {props.parentPosts.map((post) => {
                     return (
-                        <div key={index}>
-                            <div>{post.parentPosts}</div>
-                        </div>
+                        <Post post={post} />
                     );
                 })}
             </div>

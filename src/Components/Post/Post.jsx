@@ -23,26 +23,25 @@ const Post = (props) => {
     };
     
     return ( 
-        <div key={index}>
-            <div style={{'color':'white'}}>{index+1}</div>
+        <div>
             <div className='row'>
-                {userName}
+                {props.post.userName}
             </div>
             <div className='row1'>
                 <div className='col'>
-                    {postBody}
+                    {props.post.postBody}
                 </div>
                 <div className='btn-group' role='group' aria-label="Like buttons">
                     <button 
                         type='likeButton'  
-                        className={likeButtonClass} 
+                        className={`likeButtonClass ${!likeButtonClass ? "" : "false"}`} 
                         onClick={(event) => handleLikeClick(event)} 
                         disabled={likeButtonClass}>
                         <i className="fas fa-thumbs-up">LIKE</i>
                     </button>
                     <button 
                         type='dislikeButton' 
-                        className={dislikeButtonClass} 
+                        className={`dislikeButtonClass ${!dislikeButtonClass ? "" : "false"}`} 
                         onClick={(event) => handleDislikeClick(event)}
                         disabled={dislikeButtonClass}>
                         <i className="fas fa-thumbs-down">DISLIKE</i>
